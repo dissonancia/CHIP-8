@@ -1,0 +1,6 @@
+/raylib
+/roms
+*.exe
+*.out
+chip8
+Makefile
