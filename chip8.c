@@ -535,19 +535,19 @@ static Wave create_wave(void) {
     float amplitude = 20000.0f;
 
     for (size_t i = 0; i < (size_t)sample_count; ++i) {
-	float t = (float)i / SAMPLE_RATE;
-	float w = sinf(2 * PI * frequency * t);
+		float t = (float)i / SAMPLE_RATE;
+		float w = sinf(2 * PI * frequency * t);
 
-	if (w > 0) data[i] = (short)amplitude;
-	else       data[i] = (short)-amplitude;
+		if (w > 0) data[i] = (short)amplitude;
+		else       data[i] = (short)-amplitude;
     }
 
     Wave wave =  {
-	.frameCount = sample_count,
-	.sampleRate = SAMPLE_RATE,
-	.sampleSize = 16,
-	.channels   = 1,
-	.data       = data
+		.frameCount = sample_count,
+		.sampleRate = SAMPLE_RATE,
+		.sampleSize = 16,
+		.channels   = 1,
+		.data       = data
     };
 
     return wave;
@@ -595,10 +595,10 @@ int main(int argc, char * argv[]) {
         while (timer_accumulator >= (1.0f / (float) FPS)) {
             if (delay_timer > 0) delay_timer--;
 	    
-	    if (sound_timer > 0) {
-		PlaySound(sound);
-		sound_timer--;
-	    }
+	    	if (sound_timer > 0) {
+				PlaySound(sound);
+				sound_timer--;
+	    	}
 		
             timer_accumulator -= (1.0f / (float) FPS);
         }
